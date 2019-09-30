@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>人力资源大数据管理平台 | 管理员管理</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link rel="stylesheet" th:href="@{/asserts/css/bootstrap.min.css}"/>
+
+    <link rel="stylesheet" th:href="@{/asserts/css/font-awesome.min.css}"/>
+
+    <link rel="stylesheet" th:href="@{/asserts/css/ionicons.min.css}"/>
+
+    <link rel="stylesheet" th:href="@{/asserts/css/AdminLTE.min.css}"/>
+
+    <link rel="stylesheet" th:href="@{/asserts/css/skins/_all-skins.min.css}">
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+
+<div class="wrapper">
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="/manage/main" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>平台</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>人力资源大数据平台</b></span>
+        </a>
+        <nav class="navbar navbar-static-top">
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="hidden-xs">[[${session.username}]]</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <p>
+                                    [[${session.username}]]
+                                </p>
+                            </li>
+
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat">个人信息</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="/manage/logout" class="btn btn-default btn-flat">注销</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header">功能菜单</li>
+                    <li class="treeview active">
+                        <a href="#">
+                            <i class="fa fa-users"></i> <span>管理员用户管理</span>
+                            <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/manage/manager/list"><i class="fa fa-user-circle"></i>
+                                管理员列表</a></li>
+                            <li class="active"><a href="/manage/manager/add"><i class="fa fa-user-circle"></i> 添加管理员</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </section>
+        </aside>
+    </aside>
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                控制面板
+                <small></small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li class="active">管理员管理</li>
+            </ol>
+        </section>
+
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box box-info col-md-5">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">添加管理员</h3>
+                        </div>
+
+                        <form class="form-horizontal col-md-5" action="/manage/manager/doAdd" method="post" id="inputForm">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="username" class="col-sm-2 control-label">管理员账号</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control required" id="username" name="username"
+                                               placeholder="请填写管理员账号">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password" class="col-sm-2 control-label">管理员密码</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control required" id="password" name="password"
+                                               placeholder="请填写管理员密码">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                                <button type="button" class="btn btn-default" onclick="history.go(-1)">返回</button>
+                                <button type="submit" class="btn btn-info pull-right">提交</button>
+                            </div>
+                            <!-- /.box-footer -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+        </div>
+        <strong><a href="https://l1n.wang">L1nker4</a>.</strong>
+    </footer>
+
+</div>
+<script th:src="@{/asserts/js/jquery.min.js}"></script>
+
+<script th:src="@{/asserts/js/bootstrap.min.js}"></script>
+
+<script th:src="@{/asserts/js/jquery.slimscroll.min.js}"></script>
+
+<script th:src="@{/asserts/js/fastclick.js}"></script>
+<!-- AdminLTE App -->
+<script th:src="@{/asserts/js/adminlte.min.js}"></script>
+
+<script th:src="@{/asserts/js/dashboard.js}"></script>
+
+<script th:src="@{/asserts/plugins/jquery-validation/js/jquery.validate.min.js}"></script>
+
+<script th:src="@{/asserts/plugins/jquery-validation/js/additional-methods.min.js}"></script>
+
+<script th:src="@{/asserts/plugins/jquery-validation/js/localization/messages_zh.js}"></script>
+</body>
+</html>

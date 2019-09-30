@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>人力资源大数据管理平台 | 登录</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link rel="stylesheet" th:href="@{/asserts/css/bootstrap.min.css}"/>
+
+    <link rel="stylesheet" th:href="@{/asserts/css/font-awesome.min.css}"/>
+
+    <link rel="stylesheet" th:href="@{/asserts/css/AdminLTE.min.css}"/>
+
+    <link rel="stylesheet" th:href="@{/asserts/css/skins/_all-skins.min.css}">
+
+    <link rel="stylesheet" th:href="@{/asserts/css/ionicons.min.css}">
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+
+<div class="wrapper">
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="/manage/main" class="logo">
+            <span class="logo-mini"><b>平台</b></span>
+            <span class="logo-lg"><b>人力资源大数据平台</b></span>
+        </a>
+        <nav class="navbar navbar-static-top">
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="hidden-xs">[[${session.username}]]</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <p>[[${session.username}]]
+
+                                </p>
+                            </li>
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat">个人信息</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="/manage/logout" class="btn btn-default btn-flat">注销</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header">功能菜单</li>
+                <li class="treeview" shiro:hasRole="admin">
+                    <a href="#">
+                        <i class="fa fa-users"></i> <span>管理员用户管理</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/manage/manager/list"><i class="fa fa-user-circle"></i> 管理员列表</a></li>
+                        <li><a href="/manage/manager/add"><i class="fa fa-user-circle"></i> 添加管理员</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </section>
+    </aside>
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                控制面板
+                <small></small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="/manage/main"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li class="active">控制面板</li>
+            </ol>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-blue">
+                        <div class="inner">
+                            <h3>47</h3>
+
+                            <p>已发布职位</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-paperclip"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-aqua">
+                        <div class="inner">
+                            <h3>21</h3>
+
+                            <p>已投递简历</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-paper-airplane"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-green">
+                        <div class="inner">
+                            <h3>44</h3>
+
+                            <p>企业用户注册</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-compass"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-yellow">
+                        <div class="inner">
+                            <h3>44</h3>
+
+                            <p>个人用户注册</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box box-danger">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">人才招聘学历分布</h3>
+                        </div>
+                        <div class="box-body">
+                            <div id="education" style="height: 400px;width: 100%;"></div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box box-danger">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">热门招聘城市</h3>
+                        </div>
+                        <div class="box-body">
+                            <div id="city" style="height: 400px;width: 100%;"></div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+        </div>
+        <strong><a href="https://l1n.wang">L1nker4</a>.</strong>
+    </footer>
+
+</div>
+
+<script th:src="@{/asserts/js/echarts.js}"></script>
+
+<script th:src="@{/asserts/js/jquery.min.js}"></script>
+
+<script th:src="@{/asserts/js/bootstrap.min.js}"></script>
+
+<script th:src="@{/asserts/js/jquery.slimscroll.min.js}"></script>
+
+<script th:src="@{/asserts/js/fastclick.js}"></script>
+<!-- AdminLTE App -->
+<script th:src="@{/asserts/js/adminlte.min.js}"></script>
+
+<script th:src="@{/asserts/js/dashboard.js}"></script>
+
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('education'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        legend: {},
+        tooltip: {},
+        dataset: {
+            source: [
+                ['product', '用户学历分布', '招聘要求分布'],
+                ['专科', 43.3, 85.8, 93.7],
+                ['本科', 83.1, 73.4, 55.1],
+                ['硕士', 86.4, 65.2, 82.5],
+                ['博士', 72.4, 53.9, 39.1]
+            ]
+        },
+        xAxis: {type: 'category'},
+        yAxis: {},
+
+        series: [
+            {type: 'bar'},
+            {type: 'bar'}
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+    var cityChart = echarts.init(document.getElementById('city'));
+
+    var cityOption = {
+        xAxis: {
+            type: 'category',
+            data: ['北京', '上海', '深圳', '苏州', '南京', '杭州', '合肥']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [{
+            data: [120, 200, 150, 80, 70, 110, 130],
+            type: 'bar'
+        }]
+    };
+    cityChart.setOption(cityOption);
+
+</script>
+</body>
+</html>

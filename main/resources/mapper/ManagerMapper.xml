@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wang.l1n.recruitment.mapper.ManagerMapper">
+
+    <resultMap id="managerMap" type="wang.l1n.recruitment.entity.Manager">
+        <id property="mid" column="mid"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="groupId" column="group_id"/>
+        <collection property="roles" ofType="wang.l1n.recruitment.entity.Role">
+            <id property="rid" column="rid"/>
+            <result property="rname" column="rname"/>
+            <collection property="permissions" ofType="wang.l1n.recruitment.entity.Permission">
+                <id property="pid" column="pid"/>
+                <result property="name" column="name"/>
+                <result property="url" column="url"/>
+            </collection>
+        </collection>
+    </resultMap>
+
+    <select id="selectManagerByUsername" parameterType="string" resultMap="managerMap">
+        select m.*, r.*, p.*
+        from tb_manager m
+                 inner join tb_manager_role ur on ur.mid = m.mid
+                 inner join tb_role r on r.rid = ur.rid
+                 inner join tb_permission_role pr on pr.rid = r.rid
+                 inner join tb_permission p on pr.pid = p.pid
+        where m.username = #{username}
+    </select>
+
+    <insert id="insertManager" useGeneratedKeys="true" keyProperty="mid">
+        insert into tb_manager (username, password)
+        VALUES (#{username}, #{password})
+    </insert>
+
+    <insert id="addManagerToRole">
+        insert into tb_manager_role (mid, rid)
+        VALUES (#{mid}, #{rid})
+    </insert>
+
+    <select id="getManagerList" resultType="wang.l1n.recruitment.entity.Manager">
+        SELECT tb_manager.mid,
+               tb_manager.username,
+               tb_manager.`password`
+        FROM tb_manager
+    </select>
+
+    <select id="getManagerById" resultType="wang.l1n.recruitment.entity.Manager">
+        SELECT tb_manager.mid,
+               tb_manager.username,
+               tb_manager.`password`
+        FROM tb_manager
+        where tb_manager.mid = #{mid}
+    </select>
+
+    <update id="updateManagerById" parameterType="wang.l1n.recruitment.entity.Manager">
+        update tb_manager
+        set username = #{username},
+            password = #{password}
+        where mid = #{mid}
+    </update>
+
+    <delete id="deleteManager">
+        delete
+        from tb_manager
+        where mid = #{id}
+    </delete>
+
+    <delete id="deleteManagerFromRole">
+        delete
+        from tb_manager_role
+        where mid = #{id}
+    </delete>
+
+
+</mapper>

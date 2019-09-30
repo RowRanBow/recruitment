@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="pagination-box clearfix" id="pageview">
+    <ul class="pagination">
+        <li><a href="javascript: gotoPage(1)" aria-label="Previous"
+               title="首页"> <span aria-hidden="true">首页 </span> </a>
+        </li> &nbsp;
+        <!--<s:iterator begin="%{beginPageIndex}" end="%{endPageIndex}" var="num">-->
+            <!--<s:if test="#num == currentPage">-->
+                <!--<li class="active"><a href="#">${num}</a>-->
+                <!--</li>-->
+            <!--</s:if>-->
+            <!--<s:else>-->
+                <!--<%&#45;&#45; 非当前页 &#45;&#45;%>-->
+                <!--<li><a href="javascript:gotoPage(${num});">${num}</a>-->
+                <!--</li>-->
+            <!--</s:else>-->
+        <!--</s:iterator>-->
+        <li><a href="javascript: gotoPage(${pageCount})"
+               aria-label="Next"> <span aria-hidden="true"> 尾页</span> </a>
+        </li>
+    </ul>
+</div>
+<br>
+<script type="text/javascript">
+    $("#_pn").val("${currentPage}");
+</script>
+<script type="text/javascript">
+    function gotoPage(pageNum) {
+        //window.location.href = "forum_show.action?id=${id}&pageNum=" + pageNum;
+
+        $(document.forms['page'])
+            .append(
+                "<input type='hidden' name='pageNum' value='" + pageNum +"'>");
+        document.forms['page'].submit();
+    }
+</script>
+</body>
+</html>

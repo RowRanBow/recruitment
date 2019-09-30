@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>人才招聘</title>
+    <link rel="icon" th:href="@{/front/images/favicon.ico}" type="image/x-icon">
+
+    <!-- BOOTSTRAPE STYLESHEET CSS FILES -->
+    <link rel="stylesheet" th:href="@{/front/index/bootstrap.min.css}">
+
+    <!-- JQUERY SELECT -->
+    <link th:href="@{/front/index/select2.min.css}" rel="stylesheet"/>
+
+    <!-- JQUERY MENU -->
+    <link rel="stylesheet" th:href="@{/front/index/mega_menu.min.css}">
+
+    <!-- ANIMATION -->
+    <link rel="stylesheet" th:href="@{/front/index/animate.min.css}">
+
+    <!-- OWl  CAROUSEL-->
+    <link rel="stylesheet" th:href="@{/front/index/owl.carousel.css}">
+    <link rel="stylesheet" th:href="@{/front/index/owl.style.css}">
+
+    <!-- TEMPLATE CORE CSS -->
+    <link rel="stylesheet" th:href="@{/front/index/style.css}">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" type="text/css" th:href="@{/front/index/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/front/index/et-line-fonts.css}" type="text/css">
+
+    <!-- Google Fonts -->
+    <link
+            href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900,300"
+            rel="stylesheet" type="text/css">
+    <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700"
+            rel="stylesheet" type="text/css">
+    <!-- JavaScripts -->
+    <script th:src="@{/front/js/modernizr.js}"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<div class="page category-page">
+
+    <!-- nav start -->
+    <nav th:replace="public/menu :: #menu-1"></nav>
+
+    <div class="clearfix"></div>
+
+    <div class="clearfix"></div>
+    <section class="job-breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-7 co-xs-12 text-left">
+                    <h3>公司列表</h3>
+                </div>
+                <div class="col-md-6 col-sm-5 co-xs-12 text-right">
+                    <!--                    <div class="bread">-->
+                    <!--                        <ol class="breadcrumb">-->
+                    <!--                            <li><a href="#">Home</a></li>-->
+                    <!--                            <li><a href="#">Blog 2</a></li>-->
+                    <!--                        </ol>-->
+                    <!--                    </div>-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="featured-jobs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="featured-image-box">
+                        <div class="img-box">
+                            <img src="/front/images/company/1.png"
+                                 class="img-responsive center-block" alt="">
+                        </div>
+                        <div class="content-area">
+                            <div class="">
+                                <h4>
+                                    <a href=""> 字节跳动 </a>
+                                </h4>
+                                <p>1000人以上 |互联网
+                                </p>
+                                <p>信息</p>
+                            </div>
+
+                            <div class="feature-post-meta-bottom">
+											<span><small>地址：江苏省南京市</small>
+											</span> <a href="#" class="apply pull-right">查看岗位</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="featured-image-box">
+                        <div class="img-box">
+                            <img src="/front/images/company/1.png"
+                                 class="img-responsive center-block" alt="">
+                        </div>
+                        <div class="content-area">
+                            <div class="">
+                                <h4>
+                                    <a href=""> 字节跳动 </a>
+                                </h4>
+                                <p>全职 |1000人以上 |互联网
+                                </p>
+                                <p>信息</p>
+                            </div>
+
+                            <div class="feature-post-meta-bottom">
+											<span><small>地址：江苏省南京市</small>
+											</span> <a href="#" class="apply pull-right">查看岗位</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="featured-image-box">
+                        <div class="img-box">
+                            <img src="/front/images/company/1.png"
+                                 class="img-responsive center-block" alt="">
+                        </div>
+                        <div class="content-area">
+                            <div class="">
+                                <h4>
+                                    <a href=""> 字节跳动 </a>
+                                </h4>
+                                <p>全职 |1000人以上 |互联网
+                                </p>
+                                <p>信息</p>
+                            </div>
+
+                            <div class="feature-post-meta-bottom">
+											<span><small>地址：江苏省南京市</small>
+											</span> <a href="#" class="apply pull-right">查看岗位</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="featured-image-box">
+                        <div class="img-box">
+                            <img src="/front/images/company/1.png"
+                                 class="img-responsive center-block" alt="">
+                        </div>
+                        <div class="content-area">
+                            <div class="">
+                                <h4>
+                                    <a href=""> 字节跳动 </a>
+                                </h4>
+                                <p>全职 |1000人以上 |互联网
+                                </p>
+                                <p>信息</p>
+                            </div>
+
+                            <div class="feature-post-meta-bottom">
+											<span><small>地址：江苏省南京市</small>
+											</span> <a href="#" class="apply pull-right">查看岗位</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="featured-image-box">
+                        <div class="img-box">
+                            <img src="/front/images/company/1.png"
+                                 class="img-responsive center-block" alt="">
+                        </div>
+                        <div class="content-area">
+                            <div class="">
+                                <h4>
+                                    <a href=""> 字节跳动 </a>
+                                </h4>
+                                <p>全职 |1000人以上 |互联网
+                                </p>
+                                <p>信息</p>
+                            </div>
+
+                            <div class="feature-post-meta-bottom">
+											<span><small>地址：江苏省南京市</small>
+											</span> <a href="#" class="apply pull-right">查看岗位</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="featured-image-box">
+                        <div class="img-box">
+                            <img src="/front/images/company/1.png"
+                                 class="img-responsive center-block" alt="">
+                        </div>
+                        <div class="content-area">
+                            <div class="">
+                                <h4>
+                                    <a href=""> 字节跳动 </a>
+                                </h4>
+                                <p>全职 |1000人以上 |互联网
+                                </p>
+                                <p>信息</p>
+                            </div>
+
+                            <div class="feature-post-meta-bottom">
+											<span><small>地址：江苏省南京市</small>
+											</span> <a href="#" class="apply pull-right">查看岗位</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="featured-image-box">
+                        <div class="img-box">
+                            <img src="/front/images/company/1.png"
+                                 class="img-responsive center-block" alt="">
+                        </div>
+                        <div class="content-area">
+                            <div class="">
+                                <h4>
+                                    <a href=""> 字节跳动 </a>
+                                </h4>
+                                <p>全职 |1000人以上 |互联网
+                                </p>
+                                <p>信息</p>
+                            </div>
+
+                            <div class="feature-post-meta-bottom">
+											<span><small>地址：江苏省南京市</small>
+											</span> <a href="#" class="apply pull-right">查看岗位</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="featured-image-box">
+                        <div class="img-box">
+                            <img src="/front/images/company/1.png"
+                                 class="img-responsive center-block" alt="">
+                        </div>
+                        <div class="content-area">
+                            <div class="">
+                                <h4>
+                                    <a href=""> 字节跳动 </a>
+                                </h4>
+                                <p>全职 |1000人以上 |互联网
+                                </p>
+                                <p>信息</p>
+                            </div>
+
+                            <div class="feature-post-meta-bottom">
+											<span><small>地址：江苏省南京市</small>
+											</span> <a href="#" class="apply pull-right">查看岗位</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <a href="#" class="scrollup"><i class="fa fa-chevron-up"></i> </a>
+
+    <!-- JAVASCRIPT JS  -->
+    <script type="text/javascript" th:src="@{/front/js/jquery-2.2.3.min.js}"></script>
+
+    <!-- BOOTSTRAP CORE JS -->
+    <script type="text/javascript" th:src="@{/front/js/bootstrap.min.js}"></script>
+
+    <!-- JQUERY SELECT -->
+    <script type="text/javascript" th:src="@{/front/js/select2.min.js}"></script>
+
+    <!-- MEGA MENU -->
+    <script type="text/javascript" th:src="@{/front/js/mega_menu.min.js}"></script>
+
+    <!-- JQUERY EASING -->
+    <script type="text/javascript" th:src="@{/front/js/easing.js}"></script>
+
+    <!-- JQUERY COUNTERUP -->
+    <script type="text/javascript" th:src="@{/front/js/counterup.js}"></script>
+
+    <!-- JQUERY WAYPOINT -->
+    <script type="text/javascript" th:src="@{/front/js/waypoints.min.js}"></script>
+
+    <!-- JQUERY REVEAL -->
+    <script type="text/javascript" th:src="@{/front/js/footer-reveal.min.js}"></script>
+
+    <!-- Owl Carousel -->
+    <script type="text/javascript" th:src="@{/front/js/owl-carousel.js}"></script>
+
+    <!-- FOR THIS PAGE ONLY -->
+    <script th:src="@{/front/js/imagesloaded.js}"></script>
+    <script th:src="@{/front/js/isotope.min.js}"></script>
+
+    <!-- CORE JS -->
+    <script type="text/javascript" src="js/custom.js"></script>
+
+    <script type="text/javascript">
+        (function ($) {
+            "use strict";
+            $('#posts-masonry').imagesLoaded(function () {
+                $('#posts-masonry').isotope({
+                    layoutMode: 'masonry',
+                    transitionDuration: '0.3s'
+                });
+            });
+        })(jQuery);
+    </script>
+
+</div>
+</body>
+</html>
